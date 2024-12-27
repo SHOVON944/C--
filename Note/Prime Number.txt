@@ -1,0 +1,2 @@
+Prime Number:
+ jekono num nije and 1     [1*2 , 5*1]
