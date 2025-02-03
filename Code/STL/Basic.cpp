@@ -3,48 +3,48 @@ using namespace std;
 
 int main()
 {
-    // //  Pair...
-    // pair<int, int> p = {1,2};
-    // cout<<p.first<<" "<<p.second<<endl;
-    // pair<int, pair<int, int>> q = {3,{4,5}};
-    // cout<<q.first<<" "<<q.second.first<<" "<<q.second.second<<endl;
-    // pair<int, int> arr[] = {{6,7},{8,9},{10,11}};
-    // cout<<arr[1].second<<endl;  // 1st index er second value print korbe..because arr[1] means 1st index and .second means 2nd value of this index
+    //  Pair...
+    pair<int, int> p = {1,2};
+    cout<<p.first<<" "<<p.second<<endl;
+    pair<int, pair<int, int>> q = {3,{4,5}};
+    cout<<q.first<<" "<<q.second.first<<" "<<q.second.second<<endl;
+    pair<int, int> arr[] = {{6,7},{8,9},{10,11}};
+    cout<<arr[1].second<<endl;  // 1st index er second value print korbe..because arr[1] means 1st index and .second means 2nd value of this index
 
 
-    // vector<int>v;
-    // v.push_back(1);     // {1}
-    // v.emplace_back(2);  // {1,2}
+    vector<int>v;
+    v.push_back(1);     // {1}
+    v.emplace_back(2);  // {1,2}
 
-    // vector<pair<int, int>>vec;
-    // vec.push_back({3,4});   //{1,2}
-    // v.emplace_back(5,6);    // not carlibracec
+    vector<pair<int, int>>vec;
+    vec.push_back({3,4});   //{1,2}
+    v.emplace_back(5,6);    // not carlibracec
 
-    // vector<int> v(5,100);   // 1st value is index size and the second value is assign 100 in this 5 index..if we can't declare the second value [(5);] then initially all index assign with 0 value
-    // vector<int> v(5);
+    vector<int> v(5,100);   // 1st value is index size and the second value is assign 100 in this 5 index..if we can't declare the second value [(5);] then initially all index assign with 0 value
+    vector<int> v(5);
 
-    // // Copy vector
-    // vector<int> v1(5,100);
-    // vector<int> v2(v1);  //copy from v1 vector
+    // Copy vector
+    vector<int> v1(5,100);
+    vector<int> v2(v1);  //copy from v1 vector
 
-    // // Access element in a vector
-    // vector<int> v = {10, 20, 30,40,50,60,70};
-    // vector<int>:: iterator access = v.begin();      // here access is just a simple name  like variabla
-    // access++;
-    // cout<< *(access) <<" "<<endl;     // here v.begin are going to memory of v array index portion what i want the index output(accss/point the memory location(s)) and the *(v.begin) accessed the element
-    // access += 2;
-    // cout<< *(access) <<" "<<endl;
-    // cout<<v[0]<<" "<<v.at(1)<<endl;
-    // cout<<v.back()<<" "<<endl;
-    // for(vector<int>:: iterator access = v.begin(); access!=v.end(); access++){
-    //     cout<< *(access) <<" ";
-    // } cout<<endl;
-    // for(auto access = v.begin(); access!=v.end(); access++){
-    //     cout<<*(access)<<" ";
-    // } cout<<endl;
-    // for(auto access : v){
-    //     cout<<access<<" ";
-    // } cout<<endl;
+    // Access element in a vector
+    vector<int> v = {10, 20, 30,40,50,60,70};
+    vector<int>:: iterator access = v.begin();      // here access is just a simple name  like variabla
+    access++;
+    cout<< *(access) <<" "<<endl;     // here v.begin are going to memory of v array index portion what i want the index output(accss/point the memory location(s)) and the *(v.begin) accessed the element
+    access += 2;
+    cout<< *(access) <<" "<<endl;
+    cout<<v[0]<<" "<<v.at(1)<<endl;
+    cout<<v.back()<<" "<<endl;
+    for(vector<int>:: iterator access = v.begin(); access!=v.end(); access++){
+        cout<< *(access) <<" ";
+    } cout<<endl;
+    for(auto access = v.begin(); access!=v.end(); access++){
+        cout<<*(access)<<" ";
+    } cout<<endl;
+    for(auto access : v){
+        cout<<access<<" ";
+    } cout<<endl;
 
     // Erase...
     // One element Erase...
@@ -56,5 +56,21 @@ int main()
 
 
 
+    // Insert 
+    vector <int> v(2,100);          // {100,100}
+    v.insert(v.begin(),300);        //{300,100,100}
+    v.insert(v.begin()+1, 2, 10)        //{300,10,10,100,100}
+
+    vector <int> copy(30,40);                       // { 30,40}
+    v.insert(v.begin(), copy.begin(), copy.end());  // {30,40,}
+
+
+
+    // list
+    list <int> ls;
+    ls.push_back(2);        // {2}
+    ls.emplace_back(4);     // {2,4}
+    ls.push_front(1);       // {1,2,4}
+    ls.emplace_front();     // {2,4}
     return 0;
 }
