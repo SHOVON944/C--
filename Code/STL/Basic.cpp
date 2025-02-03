@@ -221,8 +221,76 @@ int main()
 
 
 
-    // map
+    // map -> stored unuque key in sorted ordered something similar to set data structure
+    // time complexivity -> (logN)
+    map <int, int> mpp;
+    map<int, pair<int, int>> mapp;
+    map< pair<int, int>, int> mpp;      // mpp[{2,3}] = 10;
+
+    mpp[1] = 2;
+    mpp.emplace({3,1});
+    mpp.insert({2,4});
+    mpp[{2,3}] = 10;
+    {   // all are sorted form...key are sorted ...
+        {1,2}
+        {2,4}
+        {3,1}
+    }
+
+    for(auto it : mpp){
+        cout<<it.first<<" "<<it.second<<endl;       // first print key than print value
+    }
+    cout<<mapp[1];              // it  print value of 2;
+    cout<<mpp[6];               // it print value of 0 or null, because there were no key of 6
+
+    auto it = mpp.find(3);
+    cout<< *(it).second;        // * for accesses and value for .second
+
+    auto it = mpp.find(5);      // there were no key of 5 it points to mpp.end() that means after the map
+
+    // This is the syntax
+    auto it = lower_bound(2);
+    auto it = upper_bound(2);
+
+    // erase, swap, size, empty are same as above
+
+
+
+
+
+    // multimap -> everthing is duplicated and sorted order
+    // everything same as map, only it can store multiple keys
+    // only mapp[key] cannot be used here
+    multimap<int, int> mmm;
+
+
+
+    // unorderedmap -> stored duplicated and unique key but not sorted
+    //same as set and unordered_set
+    // time complexivity -> O(1) 
+    // In worst cases time complexivity -> O(N)
+    unordered_map<int, int>unompp;
+
+
+
+
+
+    //                              Algorithm                   //
+
+
+    // sort()
+    sort(v,v+n);                        // sort(start, end); here n is size and v is start iterator and v+n is end iterator
+    sort(v.bigin(), v.end());
     
+
+
+
+
+
+
+
+
+
 
 
 
