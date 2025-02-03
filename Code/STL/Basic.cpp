@@ -153,10 +153,76 @@ int main()
 
 
     // set -> everithing sorted and unique
+    // time complexivity (longN)
+    set <int> setf;
+    setf.insert(1);                     // {1}
+    setf.emplace(2);                    // {1,2}
+    setf.insert(2);                     // {1,2}
+    setf.insert(4);                     // {1,2,4}
+    setf.insert(3);                     // {1,2,3,4}
+    // Functionality of insert in vector
+    // can be used also, that only increases
+    // efficiency
+    // begin(), end(), rbegin(), rend(), size()
+    // empty(), and swap() are same as those of above
+
+    //{1,2,3,4,5}
+    auto it = setf.find(3);
+    //{1,2,3,4,5}
+    auto it = setf.find(6);
+    //{1,4,5}
+    setf.erase(5);                  // erase 5  // takes logarithomic time
+
+    int cnt = setf.count(1);        // if there are one or more than 1 to count 1 or count 0, because the set are stored unique value.
+    auto it = setf.find(3);
+    setf.erase(it);                 // it takes constant time
+
+    //{1,2,3,4,5}
+    auto it1 = setf.find(2);
+    auto it2 = setf.find(4);
+    setf.erase(it1,it2);            // after erase {1,4,5} [first, last]
+    //lower bound() and upper bound() function works in the same way
+    // as in vector it dose.
+    auto it = setf.lower_bound(2);
+    auto it = setf.upper_bound(3);
+
+
+
+
+
+    // multiset -> only sorted not unique
+    // everything is same as set
+    //only stores duplicate elements also
+    multiset <int> ms;
+    ms.insert(1);               // {1}
+    ms.insert(1);               // {1,1}
+    ms.insert(1);               // {1,1,1}
+
+    ms.erase(1);                // all 1's erased
+    int cnt = ms.count(1);
+
+    ms.erase(ms.find(1));       // only a single one erased
+    ms.erase(ms.find(1), ms.find(1)+2);         // ___.erase(start, end);
+    // erase(element); -> it erase all element
+    // erase(address); -> it erase only this portions
+
+    // rest all function same as set
+
+
+
+
+    //unordered_set -> stored only unuque element not sorted
+    // time complexivity -> O(1)
+    // worst case in lenear time time complexivity -> O(N)
+    unordered_set <int> uos;
+    // all the function work except lower_bound and upper_bound function
+
+
+
+
+
+    // map
     
-
-
-
 
 
 
