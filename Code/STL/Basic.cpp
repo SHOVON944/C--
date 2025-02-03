@@ -106,7 +106,56 @@ int main()
     cout<<st.empty();
 
     stack <int> st1,st2;
-    stq.swap(st2);
+    st1.swap(st2);
+
+
+
+    // Queue -> FIFO(First In First Out)
+    // Time complexivity 0(1)
+    queue <int> qu;
+    qu.push(1);         // {1}
+    qu.push(2);         // {2,1}
+    qu.emplace(3);      // {3,2,1}
+
+    qu.back() += 5;
+    cout<<qu.back();     // prints 9
+    // {1,2,9}
+    cout<<qu.front();    // prints 1
+    qu.pop();            // {2,9}
+    cout<<qu.front();    // print 2
+    // size, swap, empty same as stack
+
+
+
+    // priority_queue(Max Heap)
+    priority_queue <int> pq;
+    pq.push(5);         // {5}
+    pq.push(2);         // {5,2}
+    pq.push(8);         // {8,5,2}
+    pq.push(10);         // {10,8,5,2}
+    pq.emplace(3);      // {10,8,5,3,2}
+
+    cout<<pq.top();     // prints 10
+    pq.pop();           //  {8,5,3,2}
+    cout<<pq.top();     // prints 8
+    // size, swap, empty function same as others
+
+    // priority_queue(Min Heap) 
+    priority_queue < int, vector<int>, greater<int>>minpq;
+    pq.push(5);         // {5}
+    pq.push(2);         // {2,5}                                            // Time complexivity
+    pq.push(8);         // {2,5,8}                                          //   .push -> logn
+    pq.emplace(10);     // {2,5,8,10}                                       //   .top -> O(1)
+                                                                            //   .pop -> logn
+    cout<<minpq.top();  // prints 2
+
+
+
+
+    // set -> everithing sorted and unique
+    
+
+
 
 
 
