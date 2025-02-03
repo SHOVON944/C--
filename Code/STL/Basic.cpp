@@ -72,5 +72,44 @@ int main()
     ls.emplace_back(4);     // {2,4}
     ls.push_front(1);       // {1,2,4}
     ls.emplace_front();     // {2,4}
+
+
+
+    // Deque -> similar to list and vector
+    // rest function same as vector
+    // begin, end, rbegin, rend, clear, insert, size, swap
+    deque <int> dq;
+    dq.push_back(1);                // {1}
+    dq.emplace_back(2);             // {1,2}
+    dq.push_front(3);               // {1,2,3}
+    dq.emplace_front(3);            // {3,1,2,3}
+    dq.pop_back();                  // {3,1,2}
+    dq.pop_front();                 // {1,2}
+    dq.back();
+    dq.front();
+
+
+
+    // stack -> LIFO(Last In Front Out)
+    // Time complexivity 0(1)
+    stack <int> st;
+    st.push(1);         // {1}
+    st.push(2);         // {2,1}
+    st.push(3);         // {3,2,1}
+    st.push(3);         // {3,3,2,1}
+    st.emplace(5);      // {5,3,3,2,1}
+
+    cout<<st.top();     //prints 5 "** st[2]"is invalid**"
+    st.pop();           // st looks like{3,3,2,1}
+    cout<<st.top();     // 3
+    cout<<st.size();    // 4
+    cout<<st.empty();
+
+    stack <int> st1,st2;
+    stq.swap(st2);
+
+
+
+
     return 0;
 }
