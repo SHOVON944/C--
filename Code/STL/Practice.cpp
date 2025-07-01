@@ -3,15 +3,18 @@ using namespace std;
 
 int main()
 {
-    set <int> setf;
-    setf.insert(1);                     // {1}
-    setf.emplace(2);                    // {1,2}
-    setf.insert(2);                     // {1,2}
-    setf.insert(4);                     // {1,2,4}
-    setf.insert(3);                     // {1,2,3,4}
-
-    auto it = setf.find(3);
-
+    int arr[] = {2, 7, 11, 15};
+    int target = 9;
+    int size = sizeof(arr)/sizeof(arr[0]);
+    for(int i=0; i<size; i++){
+        for(int j=0; j< size; j++){
+            if(arr[i]+arr[j]==target){
+                cout<<"["<<i<<","<<j<<"]"<<endl;
+                return 0;
+            }
+        }
+    }
+    cout<<"No solution found"<<endl;
 
     return 0;
 

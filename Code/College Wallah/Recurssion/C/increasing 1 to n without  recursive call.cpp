@@ -6,7 +6,7 @@ void functionCall(int x){
         return;
     }
     functionCall(x-1);
-    cout<<x<<endl;
+    cout<<x<<endl; 
     return;
 }
 int main()

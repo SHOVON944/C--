@@ -12,7 +12,7 @@ int main()
     cout<<arr[1].second<<endl;  // 1st index er second value print korbe..because arr[1] means 1st index and .second means 2nd value of this index
 
 
-    vector<int>v;
+    vector<int>v;   
     v.push_back(1);     // {1}
     v.emplace_back(2);  // {1,2}
 
@@ -24,7 +24,7 @@ int main()
     vector<int> v(5);
 
     // Copy vector
-    vector<int> v1(5,100);
+    vector<int> v1(5,50);
     vector<int> v2(v1);  //copy from v1 vector
 
     // Access element in a vector
@@ -52,14 +52,14 @@ int main()
     v.erase(v.begin()+1);   //{10,30,40,50,60,70}   // erase 1st index(20)
     // In a range element erase....
     vector<int> v = {10, 20, 30,40,50,60,70};
-    v.erase(v.begin()+2, v.begin()+4);  // {10,20,50,60,70}  // erase er khetre end deleter(2nd portion) er jonno jei porjonto dlt likhbo tar age porjnoto dlt hobe..eikhane end mane 2nd portion e 4 lekha hoice sejonn eita 3 tomo porjonto dlt korbe.
+    v.erase(v.begin()+1, v.begin()+4);  // {10,20,50,60,70}  // erase er khetre end deleter(2nd portion) er jonno jei porjonto dlt likhbo tar age porjnoto dlt hobe..eikhane end mane 2nd portion e 4 lekha hoice sejonn eita 3 tomo porjonto dlt korbe.
 
 
 
     // Insert 
     vector <int> v(2,100);          // {100,100}
     v.insert(v.begin(),300);        //{300,100,100}
-    v.insert(v.begin()+1, 2, 10)        //{300,10,10,100,100}
+    v.insert(v.begin()+1, 3, 10)        //{300,10,10,10,100,100}
 
     vector <int> copy(30,40);                       // { 30,40}
     v.insert(v.begin(), copy.begin(), copy.end());  // {30,40,}
@@ -153,7 +153,7 @@ int main()
 
 
     // set -> everithing sorted and unique
-    // time complexivity (longN)
+    // time complexivity (logN)
     set <int> setf;
     setf.insert(1);                     // {1}
     setf.emplace(2);                    // {1,2}
@@ -186,7 +186,10 @@ int main()
     auto it = setf.lower_bound(2);
     auto it = setf.upper_bound(3);
 
-
+    //{1,2,3,4,5}
+    for(auto num : v){
+        cout<<num<<endl;
+    }
 
 
 
